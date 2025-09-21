@@ -283,7 +283,12 @@ ADMIN_EMAIL=admin@yoursalon.com
 ```env
 APP_TIMEZONE=your_timezone
 ```
-
+```php
+class AvailabilityService
+{
+    const CURRENT_TIMEZONE = 'Australia/Melbourne';
+}
+```
 ### Booking Settings
 Modify availability service for:
 - Slot intervals (default: 15 minutes)
