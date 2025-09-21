@@ -286,7 +286,7 @@ APP_TIMEZONE=your_timezone
 ```php
 class AvailabilityService
 {
-    const CURRENT_TIMEZONE = 'Australia/Melbourne';
+    const CURRENT_TIMEZONE = 'Australia/Melbourne'; // change it to your current timezone
 }
 ```
 ### Booking Settings
