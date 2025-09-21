@@ -1,0 +1,69 @@
+/* --------- 1) (اختياري) خطوط Google: لازم أول سطر لو استخدمتها --------- */
+/* بدّله لـ Figtree أو Inter حسب ما اخترت في tailwind.config.js */
+@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&display=swap');
+
+/* --------- 2) طبقات Tailwind الأساسية (لا تشيلها) --------- */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* --------- 3) طبقة Base: متغيرات بسيطة + الخط الافتراضي --------- */
+@layer base {
+  :root {
+    /* تدرّجات أخضر Nuxt (اختياري — مفيد لو بدك تستخدمها في CSS يدويًا) */
+    --nuxt-50:  #E9FFF6;
+    --nuxt-100: #C9FFE9;
+    --nuxt-200: #97FFD6;
+    --nuxt-300: #5BFFC0;
+    --nuxt-400: #21F3A4;
+    --nuxt-500: #00DC82; /* الأساسي */
+    --nuxt-600: #00B86D; /* hover */
+    --nuxt-700: #00915A;
+    --nuxt-800: #0A6F4A;
+    --nuxt-900: #0C5A3E;
+  }
+
+  /* ثبّت الخط العام (يطابق tailwind.config.js) */
+  body {
+    font-family: Figtree, ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+      Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  }
+}
+
+/* --------- 4) طبقة Components: لمسات لطيفة على مكونات Filament --------- */
+@layer components {
+  /* الشريط الجانبي */
+  .fi-sidebar {
+    @apply bg-zinc-950;
+  }
+  .fi-sidebar .fi-sidebar-item-active,
+  .fi-sidebar .fi-sidebar-item:hover {
+    @apply bg-zinc-900;
+  }
+
+  /* الهيدر */
+  .fi-header {
+    @apply border-b border-zinc-800;
+  }
+
+  /* البطاقات */
+  .fi-card {
+    @apply rounded-2xl;
+  }
+
+  /* زر Primary (إن حبيت تعطيه لون Nuxt يدويًا) */
+  /* ملاحظة: Filament أصلاً بياخذ primary من ->colors() بالـ PanelProvider.
+     هذا فقط لو بدك فوقها لمسة بسيطة */
+  .fi-btn-primary {
+    /* background-color: var(--nuxt-500); */
+    /* @apply hover:opacity-95; */
+  }
+}
+
+/* --------- 5) طبقة Utilities (اختياري) --------- */
+@layer utilities {
+  /* مثال: ظل خفيف أخضر */
+  .shadow-nuxt {
+    box-shadow: 0 6px 24px rgba(0, 220, 130, 0.15);
+  }
+}
